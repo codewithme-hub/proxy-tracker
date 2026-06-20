@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ledger-book palette: warm paper, ink, amber (credit) / clay (debit) */
+  --color-paper: #F6F1E7;
+  --color-paper-dim: #EDE5D3;
+  --color-ink: #2B2620;
+  --color-ink-soft: #5C5347;
+  --color-rule: #D9CDB4;
+
+  --color-credit: #C97F2A;       /* you're owed — warm amber */
+  --color-credit-soft: #F2DDB8;
+  --color-debit: #A8432E;        /* you owe — muted clay red */
+  --color-debit-soft: #EBCDC3;
+
+  --color-stamp: #2F6B4F;        /* confirmation green for the "logged" stamp moment */
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    background-image:
+      repeating-linear-gradient(
+        transparent,
+        transparent 27px,
+        var(--color-rule) 28px
+      );
+  }
+
+  ::selection {
+    background-color: var(--color-credit-soft);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-credit);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
