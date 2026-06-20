@@ -30,6 +30,6 @@
     "@types/passport": "^1.0.16",
     "@types/passport-google-oauth20": "^2.0.16",
     "tsx": "^4.16.5",
-    "typescript": "^5.5.4"
+    "typescript": "5.5.4"
   }
 }
